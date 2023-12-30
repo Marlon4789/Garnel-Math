@@ -1,0 +1,102 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 mx-3 fixed-top mt-5 pt-5">
+            <p>
+                <button class="btn btn-light d-none d-lg-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                Temas
+                </button>
+              </p>
+              <div style="min-height: 120px;">
+                <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                  <div class="card card-body border" style="width: 130px;">
+                    
+                  {% for post in posts %}
+                  <a class="link-light" href="{% url 'post_detail' post_id=post.id %}">
+                    <p>{{ post.title }}</p>
+                  </a>
+                  {% endfor %}
+
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <!-- feedback -->
+        <div class="fixed-bottom mb-3">
+            <button type="button" class="btn btn-light d-none d-lg-block position-absolute bottom-0 end-0 mx-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Feedback</button>
+
+        </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Feedback</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Message:</label>
+                  <textarea class="form-control" id="message-text" style="height: 8rem;" placeholder="Escribir"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-light">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menú bottom pantalla lg  -->
+      <div class="container fixed-bottom d-lg-none" style="background-color: rgb(2, 2, 2);">
+        <div class="row d-flex justify-content-center grid gap-3" style="div:hover{background-color: aqua;}">
+          <div class="p-2 col-1 text-center link-light rounded-pill style">
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+          <div class="p-2 col-1 text-center link-light rounded-pill style">
+            
+
+          <!-- boton de temas  -->
+          <a class="link-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+            <i class="fa-solid fa-list"></i>
+          </a>
+
+          <div class="offcanvas offcanvas-start" style="width: 10rem; margin-top: 3.5rem; margin-bottom: 2.5rem;" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Temas</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="flex-column text-start">
+
+                  {% for post in posts %}
+                  <a class="link-light" href="{% url 'post_detail' post_id=post.id %}">
+                    <p>{{ post.title }}</p>
+                  </a>
+                  {% endfor %}
+              
+              </div>
+            </div>
+          </div>
+
+          </div>
+          <div class="p-2 col-1 text-center link-light rounded-pill style">
+          <a type="button" class="link-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa-regular fa-message"></i>
+          </a>
+
+          </div>
+        </div>
+      </div>
+        
+    </div>
+</section>
+
+{% endblock %}

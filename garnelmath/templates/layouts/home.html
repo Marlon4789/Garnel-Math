@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<main class="container pt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 mt-5 text-center">
+            <h1 class="display-5"><b>¡Bienvenido a Garnel Math!</b></h1>
+            <p class="display-6 mt-5">Matemáticas para programación y Machine Learning con Python.</p>
+            <a class="btn btn-light rounded-pill mt-5 text-dark" href="{% url 'post_detail' post_id=1 %}">Comenzar</a>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}
