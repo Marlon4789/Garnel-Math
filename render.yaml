@@ -2,7 +2,7 @@ databases:
   - name: mysite  # Cambiado de 'post' a 'mysite' para que coincida con DATABASES en Django
     databaseName: post
     user: prueba
-    password: 1234  # Contraseña de tu usuario en la base de datos
+    #password: 1234  # Contraseña de tu usuario en la base de datos
 
 services:
   - type: web
@@ -12,7 +12,7 @@ services:
     startCommand: "gunicorn mysite.wsgi:application"
     envVars:
       - key: DATABASE_URL
-        value: "postgres://prueba:1234@mysite:5432/post"  # URL de la base de datos para Django
+        #value: "postgres://prueba:1234@mysite:5432/post"  # URL de la base de datos para Django
       - key: SECRET_KEY
         generateValue: true
       - key: WEB_CONCURRENCY
