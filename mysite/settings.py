@@ -91,6 +91,21 @@ DATABASES = {
         default='postgresql://postgres:postgres@localhost:5432/mysite',
         conn_max_age=600
     )
+
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": "mysite",
+    #     "USER": "prueba",
+    #     "PASSWORD": "1234",
+    #     "HOST": "mysite",
+    #     "PORT": "5432",
+    # }
+    
+    # 'default': dj_database_url.config(
+    #     # Feel free to alter this value to suit your needs.
+    #     default='postgresql://postgres:postgres@localhost:5432/mysite',
+    #     conn_max_age=600
+    # )
 }
 
 
@@ -138,14 +153,7 @@ if not DEBUG:
 
     # Turn on WhiteNoise storage backend that takes care of compressing static files
     # and creating unique names for each version so they can safely be cached forever.
-    #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-    TESTING = len(sys.argv) > 1 and sys.argv[1] == 'test'
-
-    STATICFILES_STORAGE = (
-        'django.contrib.staticfiles.storage.StaticFilesStorage'
-        if TESTING
-        else 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-    )
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
