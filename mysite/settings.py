@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['marlongarnel.pythonanywhere.com']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -86,26 +86,18 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
-    )
-
-    # "default": {
-    #     "ENGINE": "django.db.backends.postgresql",
-    #     "NAME": "mysite",
-    #     "USER": "prueba",
-    #     "PASSWORD": "1234",
-    #     "HOST": "mysite",
-    #     "PORT": "5432",
-    # }
-    
-    # 'default': dj_database_url.config(
-    #     # Feel free to alter this value to suit your needs.
-    #     default='postgresql://postgres:postgres@localhost:5432/mysite',
-    #     conn_max_age=600
-    # )
+     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'marlongarnel$post',
+        'USER': 'marlongarnel',
+        'PASSWORD': 'mysql321',
+        'HOST': 'marlongarnel.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+            'sql_mode': 'traditional',  # Puedes ajustar esta configuración según tus necesidades
+        },
+    }
 }
 
 
