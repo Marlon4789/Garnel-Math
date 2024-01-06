@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['marlongarnel.pythonanywhere.com']
+ALLOWED_HOSTS = []#['marlongarnel.pythonanywhere.com']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -86,18 +86,22 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'marlongarnel$post',
-        'USER': 'marlongarnel',
-        'PASSWORD': 'mysql321',
-        'HOST': 'marlongarnel.mysql.pythonanywhere-services.com',
-        'PORT': '3306',
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-            'sql_mode': 'traditional',  # Puedes ajustar esta configuración según tus necesidades
-        },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'marlongarnel$post',
+    #     'USER': 'marlongarnel',
+    #     'PASSWORD': 'mysql321',
+    #     'HOST': 'marlongarnel.mysql.pythonanywhere-services.com',
+    #     'PORT': '3306',
+    #     'OPTIONS': {
+    #         'charset': 'utf8mb4',
+    #         'sql_mode': 'traditional',  # Puedes ajustar esta configuración según tus necesidades
+    #     },
+    # }
 }
 
 

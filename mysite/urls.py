@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('panel/', views.math_content_panel, name='panel'),
-    #path('panel/introduccion/', views.introduccion, name='introduccion'),
+    #path('panel/', views.form_feedback, name='panel'),
+    
     path('post/<int:post_id>/', views.post_detail, name='post_detail'),
     
 ]
