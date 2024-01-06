@@ -13,15 +13,15 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-    
+
 # Modelo feedback
 class Feedback(models.Model):
-    feedback = models.TextField('feedback', unique=True)
+    feedback = models.TextField()
     date = models.DateField('date', auto_now=False, auto_now_add=True)
 
     def __str__(self):
         return self.feedback
-    
+
 # Modelo suscripción
 class Subscription(models.Model):
     email = models.EmailField('email', unique=True, max_length=100)

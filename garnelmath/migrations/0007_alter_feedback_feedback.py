@@ -9,10 +9,3 @@ class Migration(migrations.Migration):
         ('garnelmath', '0006_alter_feedback_feedback'),
     ]
 
-    operations = [
-        migrations.AlterField(
-            model_name='feedback',
-            name='feedback',
-            field=models.TextField(unique=True, verbose_name='feedback'),
-        ),
-    ]
