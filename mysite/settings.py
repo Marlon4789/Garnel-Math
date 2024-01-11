@@ -86,17 +86,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'marlongarnel$post',
-         'USER': 'marlongarnel',
-         'PASSWORD': 'mysql321',
-         'HOST': 'marlongarnel.mysql.pythonanywhere-services.com',
-         'PORT': '3306',
-         'OPTIONS': {
-             'charset': 'utf8mb4',
-         },
-     }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'marlongarnel$post',
+        'USER': 'marlongarnel',
+        'PASSWORD': 'mysql321',
+        'HOST': 'marlongarnel.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        },
+    }
 }
 
 
