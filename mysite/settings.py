@@ -95,7 +95,6 @@ DATABASES = {
          'PORT': '3306',
          'OPTIONS': {
              'charset': 'utf8mb4',
-             'sql_mode': 'traditional',  # Puedes ajustar esta configuración según tus necesidades
          },
      }
 }

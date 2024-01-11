@@ -4,14 +4,9 @@
 
 {% load static %}
 
-<section class="container-fluid pt-5 mt-4">
+<section class="container-fluid pt-3">
     <div class="row mt-3">
-        <div class="col-sm-8 offset-sm-2 offset-md-2 px-3">
-            
-            <h1>{{ post.title }}</h1>
-
-            <h2>{{ post.description }}</h2>
-
+        <div class="col-sm-8 offset-sm-2 offset-md-2 px-3 mb-5">
             <p>{{ post.content|safe }}</p>
         </div>
     </div>
