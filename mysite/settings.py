@@ -163,6 +163,7 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'full',
         'extraPlugins': 'codesnippet',
         'codeSnippet_enabled': True,
+        'extraPlugins': 'syntaxhighlight'
     },
 }
 

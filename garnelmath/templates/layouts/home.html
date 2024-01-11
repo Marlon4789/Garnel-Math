@@ -8,7 +8,7 @@
         <div class="col-md-8 offset-md-2 mt-5 text-center">
             <h1 class="display-5 mt-2"><b>¡Bienvenido a Garnel Math!</b></h1>
             <p class="display-6 my-5">Matemáticas para programación y Machine Learning con Python.</p>
-            <a class="btn btn-light rounded-pill my-4 text-dark" href="{% url 'post_detail' post_id=1 %}">Comenzar</a>
+            <a class="btn btn-light rounded-pill my-3 text-dark" href="{% url 'post_detail' post_id=1 %}">Comenzar</a>
         </div>
     </div>
 </main>
@@ -17,15 +17,15 @@
 <section>
     <div class="container d-flex justify-content-center">
         <div class="row">
-            <div class="col-md-8 offset-md-2 mt-5">
+            <div class="col-md-8 offset-md-2 mt-4">
                 <p class="col-md-8 offset-md-2 text-center fs-4">Suscribete para estar al tanto de nuevas actualizaciones o siguenos en nuetras redes sociales.   
                 </p>
 
-                <form action="" class="col-8 offset-md-2 d-flex mb-4 py-3" method="POST">
+                <form action="" class="col-md-8 offset-md-2 d-flex mb-4 p-3" method="POST">
                     {% csrf_token %}
                     <input class="form-control rounded-start-pill" type="email" name="email" id="email" placeholder="Email">
                     <button type="submit" class="btn btn-light text-dark rounded-pill rounded-start">
-                    Enviar
+                    Suscribirse
                     </button>
                 </form>
 
